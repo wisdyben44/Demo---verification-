@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Identity Verification</title>
+<style>
+body{
+font-family: Arial;
+text-align:center;
+background:#f4f4f4;
+}
+
+video{
+width:80%;
+border-radius:10px;
+margin-top:20px;
+}
+
+button{
+padding:15px;
+font-size:18px;
+margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Secure Identity Verification</h1>
+<p>Please complete the verification process</p>
+
+<video id="video" autoplay></video>
+
+<br>
+
+<button onclick="captureFace()">Capture Face</button>
+<button onclick="capturePalm()">Capture Palm</button>
+
+<script>
+
+const video = document.getElementById('video');
+
+navigator.mediaDevices.getUserMedia({ video: true })
+.then(stream => {
+video.srcObject = stream;
+});
+
+function captureFace(){
+alert("Face captured (demo)");
+}
+
+function capturePalm(){
+alert("Palm captured (demo)");
+}
+
+</script>
+
+</body>
+</html>
